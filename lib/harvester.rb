@@ -1,7 +1,3 @@
-require 'rubygems'
-require "harvester/version"
-require 'bundler/setup'
-
 require 'faraday'
 require 'faraday_stack'
 
