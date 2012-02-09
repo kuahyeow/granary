@@ -1,4 +1,4 @@
-module Harvester
+module Granary
   class TimeEntry
     API_FIELDS = [:spent_at, :hours, :notes, :id, :project_id, :task_id, :user_id]
     API_FIELDS.each {|field| attr_accessor field}

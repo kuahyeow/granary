@@ -2,9 +2,9 @@ require 'faraday'
 require 'faraday_stack'
 
 Dir[File.expand_path('../faraday/*.rb', __FILE__)].each{|f| require f}
-require File.expand_path('../harvester/time_entry', __FILE__)
+require File.expand_path('../granary/time_entry', __FILE__)
 
-module Harvester
+module Granary
   module Connection
     def connection(root, authorization)
       Faraday.new(:url => root, :headers => {:accept => 'application/json', :authorization => authorization}) do |builder|

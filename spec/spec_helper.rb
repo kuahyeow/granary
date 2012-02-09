@@ -1,2 +1,2 @@
-require File.expand_path('../../lib/harvester', __FILE__)
+require File.expand_path('../../lib/granary', __FILE__)
 

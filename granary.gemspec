@@ -1,15 +1,15 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "harvester/version"
+require "granary/version"
 
 Gem::Specification.new do |s|
-  s.name        = "harvester"
-  s.version     = Harvester::VERSION
-  s.authors     = ["Thong Kuah"]
+  s.name        = "granary"
+  s.version     = Granary::VERSION
+  s.authors     = ["Thong Kuah", "YouDo Limited"]
   s.email       = ["kuahyeow@gmail.com"]
   s.homepage    = ""
-  s.summary     = "An opinionated client for the Harvest Time tracker API"
-  s.description = "An opinionated client for the Harvest Time tracker API"
+  s.summary     = "A Ruby libary for the Harvest API"
+  s.description = "A Ruby libary for the Harvest API"
 
 
   s.files         = `git ls-files`.split("\n")
