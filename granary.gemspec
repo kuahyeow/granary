@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Thong Kuah", "YouDo Limited"]
   s.email       = ["kuahyeow@gmail.com"]
   s.homepage    = "https://github.com/kuahyeow/granary"
-  s.summary     = "A Ruby libary for the Harvest API"
-  s.description = "A Ruby libary for the Harvest API"
+  s.summary     = "A Ruby library for the Harvest API"
+  s.description = "A Ruby library for the Harvest API"
 
 
   s.files         = `git ls-files`.split("\n")
