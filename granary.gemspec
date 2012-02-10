@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Granary::VERSION
   s.authors     = ["Thong Kuah", "YouDo Limited"]
   s.email       = ["kuahyeow@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/kuahyeow/granary"
   s.summary     = "A Ruby libary for the Harvest API"
   s.description = "A Ruby libary for the Harvest API"
 

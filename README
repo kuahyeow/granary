@@ -1,0 +1,16 @@
+Granary
+
+A Ruby wrapper for the Harvest API
+
+Early days yet...
+
+api = Granary::API.new(:authorization => 'YOUR HARVEST AUTH', :subdomain => 'YOUR HARVEST SUBDOMAIN')
+
+project_id = 'THE ID OF A HARVEST PROJECT'
+from_date = Date.civil(2012, 2, 6).strftime("%Y%m%d")              # Monday
+to_date = Date.civil(2012, 2, 10).strftime("%Y%m%d")               # Friday
+
+time_entries = api.project_time(project_id, from_date, to_date)    # this will fetch all time for the project for the date range specified
+tt = time_entries.map {|t| Granary::TimeEntry.new t[:day_entry] }  # Wrap it into handy object
+
+
