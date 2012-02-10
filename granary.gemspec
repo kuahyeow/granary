@@ -21,6 +21,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "webmock", "~> 1.7"
 
   s.add_runtime_dependency "faraday", "~> 0.7.6"
-  s.add_runtime_dependency "faraday-stack", "~> 0.1.4"
-  s.add_runtime_dependency "yajl-ruby"
+  s.add_runtime_dependency "faraday_middleware", "~> 0.8.4"
 end

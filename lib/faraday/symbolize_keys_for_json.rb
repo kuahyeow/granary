@@ -1,5 +1,5 @@
-require 'faraday_stack'
+require 'faraday_middleware'
 
-FaradayStack::ResponseJSON.define_parser do |body|
-  Yajl::Parser.parse(body, :symbolize_keys => true)
+FaradayMiddleware::ParseJson.define_parser do |body|
+  JSON.parse(body, :symbolize_names => true)
 end
