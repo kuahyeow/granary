@@ -2,24 +2,24 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "granary/version"
 
-Gem::Specification.new do |s|
-  s.name        = "granary"
-  s.version     = Granary::VERSION
-  s.authors     = ["Thong Kuah", "YouDo Limited"]
-  s.email       = ["kuahyeow@gmail.com"]
-  s.homepage    = "https://github.com/kuahyeow/granary"
-  s.summary     = "A Ruby library for the Harvest API"
-  s.description = "A Ruby library for the Harvest API"
+Gem::Specification.new do |spec|
+  spec.name        = "granary"
+  spec.version     = Granary::VERSION
+  spec.authors     = ["Thong Kuah", "YouDo Limited"]
+  spec.email       = ["kuahyeow@gmail.com"]
+  spec.homepage    = "https://github.com/kuahyeow/granary"
+  spec.summary     = "A Ruby library for the Harvest API"
+  spec.description = "A Ruby library for the Harvest API"
 
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {spec,features}/*`.split("\n")
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
-  s.add_development_dependency "rspec", "~> 2.8"
-  s.add_development_dependency "webmock", "~> 1.7"
+  spec.add_development_dependency "rspec", "~> 2.8"
+  spec.add_development_dependency "webmock", "~> 1.7"
 
-  s.add_runtime_dependency "faraday", "~> 0.7.6"
-  s.add_runtime_dependency "faraday_middleware", "~> 0.8.4"
+  spec.add_runtime_dependency "faraday", "~> 0.8.7"
+  spec.add_runtime_dependency "faraday_middleware", "~> 0.9.0"
 end

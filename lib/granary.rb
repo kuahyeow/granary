@@ -1,20 +1,22 @@
+require 'granary/version'
+
 require 'faraday'
 require 'faraday_middleware'
 
 Dir[File.expand_path('../faraday/*.rb', __FILE__)].each{|f| require f}
-require File.expand_path('../granary/time_entry', __FILE__)
+require 'granary/time_entry'
 
 module Granary
   module Connection
     def connection(root, authorization)
-      Faraday.new(:url => root, :headers => {:accept => 'application/json', :authorization => authorization}) do |builder|
-        builder.use Faraday::Request::JSON          # encode request params as json
+      Faraday.new(:url => root, :headers => {:accept => 'application/json', :authorization => authorization}) do |conn|
+        conn.request :json
 
-        builder.use Faraday::Response::RaiseError   # raise exceptions on 40x, 50x responses
-        builder.use Faraday::Response::Logger       # log the request to STDOUT
-        builder.use FaradayMiddleware::ParseJson,   :content_type => /\bjson$/                  # requires json gem install in 1.8.7
+        conn.response :logger                                   # log the request to STDOUT
+        conn.response :raise_error                              # raise exceptions on 40x, 50x responses
+        conn.response :json,   :content_type => /\bjson$/       # requires json gem install in 1.8.7
 
-        builder.use Faraday::Adapter::NetHttp       # make http requests with Net::HTTP
+        conn.adapter :net_http                                  # make http requests with Net::HTTP
       end
     end
   end
